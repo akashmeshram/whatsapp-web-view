@@ -1,4 +1,5 @@
 import styles from "./style.module.css";
+import { ReactComponent as Send } from "./send.svg";
 
 function Chatbox() {
   return (
@@ -7,7 +8,9 @@ function Chatbox() {
         <input type="text"></input>
       </div>
       <div className={styles.send}>
-        <button>Submit</button>
+        <button>
+          <Send />
+        </button>
       </div>
     </div>
   );

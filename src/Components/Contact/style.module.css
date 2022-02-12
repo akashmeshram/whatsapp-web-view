@@ -2,17 +2,38 @@
   display: flex;
   flex-direction: row;
   height: 72px;
-  background-color: aliceblue;
-  border-top: 1px solid black;
+  background-color: white;
   padding-right: 15px;
 }
 
 .displaypic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0 15px 0 13px;
+}
+
+.displaypic > img {
+  width: 50px;
+  height: 50px;
+  background-color: aqua;
+  border-radius: 50%;
 }
 
 .profileinfo {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
+  border-top: 1px solid #e9edef;
+}
+
+.profileinfo > .profilename {
+  font-size: 18px;
+  color: #3b4a54;
+}
+
+.profileinfo > .latestMessage {
+  font-size: 14px;
+  color: #3b4a54;
 }

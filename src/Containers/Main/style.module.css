@@ -1,7 +1,8 @@
 .container {
-  flex: 3 1 0;
+  flex: 5 1 0;
   display: flex;
   flex-direction: column;
+  background-color: #ecece4;
 }
 
 .messages {

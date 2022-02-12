@@ -10,8 +10,9 @@
 }
 
 .text {
-  background-color: antiquewhite;
+  background-color: white;
   border-radius: 3px;
   padding: 5px 20px;
   max-width: 60%;
+  font-size: 14px;
 }

@@ -2,7 +2,7 @@
   text-align: center;
   display: flex;
   align-items: center;
-  background-color: cadetblue;
+  background-color: #f0f2f5;
 }
 
 .inputtext {
@@ -11,11 +11,31 @@
 
 .inputtext > input {
   padding: 9px 12px 11px;
-  margin: 5px 10px;
+  margin: 10px;
   width: 80%;
+  border-radius: 8px;
+  border: 1px solid #fff;
+}
+
+.inputtext > input:focus {
+  outline: none;
 }
 
 .send {
   flex: 1 1 0;
-  margin: 5px 10px;
+}
+
+.send > button {
+  border-color: none;
+  border: none;
+  outline: none;
+  z-index: 2;
+}
+
+/* .send > button:focus {
+  outline: none;
+} */
+
+.send > button:hover {
+  cursor: pointer;
 }
