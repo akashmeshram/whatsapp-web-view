@@ -1,12 +1,12 @@
 import "./Global.css";
-import Contacts from "./Containers/Contacts";
-import Chat from "./Containers/Chat";
+import Side from "./Containers/Side";
+import Main from "./Containers/Main";
 
 function App() {
   return (
     <div className="App">
-      <Contacts />
-      <Chat />
+      <Side />
+      <Main />
     </div>
   );
 }

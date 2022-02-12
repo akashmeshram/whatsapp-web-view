@@ -1,7 +1,7 @@
 import styles from "./style.module.css";
 
-function Chat() {
+function Main() {
   return <div className={styles.container}>Chat Container</div>;
 }
 
-export default Chat;
+export default Main;
