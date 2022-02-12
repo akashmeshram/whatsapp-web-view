@@ -8,7 +8,7 @@ function Message({ id }) {
         ...(id % 2 === 0 ? [styles.receiver] : []),
       ].join(" ")}
     >
-      <p>hello there {id}</p>
+      <p className={styles.text}>hello there how are you {id}</p>
     </div>
   );
 }
