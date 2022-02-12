@@ -1,6 +1,7 @@
 import styles from "./style.module.css";
 import Message from "../../Components/Message";
 
+import Profilebar from "../../Components/Profilebar";
 import Chatbox from "../../Components/Chatbox";
 
 function Main() {
@@ -9,8 +10,13 @@ function Main() {
   ));
   return (
     <div className={styles.container}>
+      <div>
+        <Profilebar />
+      </div>
       <div className={styles.messages}>{allMessages}</div>
-      <Chatbox />
+      <div>
+        <Chatbox />
+      </div>
     </div>
   );
 }

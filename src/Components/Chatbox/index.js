@@ -3,7 +3,12 @@ import styles from "./style.module.css";
 function Chatbox() {
   return (
     <div className={styles.container}>
-      <input type="text"></input>
+      <div className={styles.inputtext}>
+        <input type="text"></input>
+      </div>
+      <div className={styles.send}>
+        <button>Submit</button>
+      </div>
     </div>
   );
 }

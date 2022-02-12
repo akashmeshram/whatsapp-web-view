@@ -1,6 +1,10 @@
 .container {
   flex: 1 1 0;
-  padding: 0 2%;
-  overflow-y: scroll;
   background-color: aqua;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts {
+  overflow-y: scroll;
 }

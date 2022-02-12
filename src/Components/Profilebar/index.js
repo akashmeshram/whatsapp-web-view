@@ -1,15 +1,15 @@
 import styles from "./style.module.css";
 
-function Contact({ id }) {
+function Profilebar() {
   return (
     <div className={styles.container}>
       <div className={styles.displaypic}>pic</div>
       <div className={styles.profileinfo}>
-        <p>Contact {id}</p>
+        <p>Contact </p>
         <p>Latest text</p>
       </div>
     </div>
   );
 }
 
-export default Contact;
+export default Profilebar;

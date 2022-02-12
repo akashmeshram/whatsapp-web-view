@@ -1,4 +1,21 @@
 .container {
-  padding: 10px 0;
   text-align: center;
+  display: flex;
+  align-items: center;
+  background-color: cadetblue;
+}
+
+.inputtext {
+  flex: 9 1 0;
+}
+
+.inputtext > input {
+  padding: 9px 12px 11px;
+  margin: 5px 10px;
+  width: 80%;
+}
+
+.send {
+  flex: 1 1 0;
+  margin: 5px 10px;
 }
