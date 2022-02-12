@@ -1,9 +1,10 @@
 import styles from "./style.module.css";
 
-function Contact() {
+function Contact({ id }) {
   return (
     <div className={styles.container}>
-      <p>Contact 1</p>
+      <h4>Contact {id}</h4>
+      <p>Latest text</p>
     </div>
   );
 }

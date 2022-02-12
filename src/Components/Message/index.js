@@ -1,9 +1,14 @@
 import styles from "./style.module.css";
 
-function Message() {
+function Message({ id }) {
   return (
-    <div className={styles.container}>
-      <p>hell there</p>
+    <div
+      className={[
+        styles.container,
+        ...(id % 2 === 0 ? [styles.receiver] : []),
+      ].join(" ")}
+    >
+      <p>hello there {id}</p>
     </div>
   );
 }

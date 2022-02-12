@@ -2,5 +2,13 @@
   padding: 10px 0;
   margin-bottom: 10px;
   display: flex;
-  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.receiver {
+  justify-content: flex-start;
+}
+
+.text {
+  max-width: 60%;
 }

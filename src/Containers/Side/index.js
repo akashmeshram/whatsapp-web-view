@@ -1,7 +1,11 @@
 import styles from "./style.module.css";
+import Contact from "../../Components/Contact";
 
 function Side() {
-  return <div className={styles.container}>Contacts Container</div>;
+  const allContacts = [...new Array(10)].map((_, i) => (
+    <Contact key={i} id={i} />
+  ));
+  return <div className={styles.container}>{allContacts}</div>;
 }
 
 export default Side;
