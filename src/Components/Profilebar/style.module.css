@@ -23,3 +23,14 @@
   flex-direction: column;
   justify-content: center;
 }
+
+.profileinfo > .profileName {
+  font-size: 18px;
+  color: #3b4a54;
+}
+
+.profileinfo > .profileInfo {
+  font-size: 14px;
+  line-height: 20px;
+  color: rgb(134, 150, 160);
+}

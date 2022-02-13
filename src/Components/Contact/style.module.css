@@ -6,6 +6,10 @@
   padding-right: 15px;
 }
 
+.container:hover {
+  cursor: pointer;
+}
+
 .displaypic {
   display: flex;
   justify-content: center;
@@ -28,12 +32,28 @@
   border-top: 1px solid #e9edef;
 }
 
-.profileinfo > .profilename {
+.profileHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profileHeader > .profileName {
   font-size: 18px;
   color: #3b4a54;
 }
 
+.profileHeader > .profileTimestamp {
+  font-size: 14px;
+  color: rgb(134, 150, 160);
+}
+
 .profileinfo > .latestMessage {
   font-size: 14px;
-  color: #3b4a54;
+  line-height: 20px;
+  color: rgb(134, 150, 160);
+  width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
