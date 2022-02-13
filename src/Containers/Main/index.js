@@ -8,24 +8,24 @@ import Message from "../../Components/Message";
 import Profilebar from "../../Components/Profilebar";
 import Chatbox from "../../Components/Chatbox";
 
-function Main({ contact, addMessage }) {
-  const [profileName, setProfileName] = useState("");
-  const [profilePic, setProfilePic] = useState("");
+function Main({ contact, chatList, addMessage }) {
   const [messageList, setMessageList] = useState([]);
 
   useEffect(() => {
-    setProfileName(contact.name);
-    setProfilePic(contact.picture);
-    const allMessages = contact.chatlog.map(({ text, side, timestamp }, i) => (
+    const allMessages = chatList.map(({ text, side, timestamp }, i) => (
       <Message key={i} id={i} text={text} side={side} time={timestamp} />
     ));
     setMessageList(allMessages);
-  }, [contact]);
+  }, [contact, chatList]);
 
   return (
     <div className={styles.container}>
       <div>
-        <Profilebar name={profileName} picture={profilePic} />
+        <Profilebar
+          name={contact.name}
+          picture={contact.picture}
+          status={contact.status}
+        />
       </div>
       <div className={styles.messages}>{messageList}</div>
       <div>
@@ -36,9 +36,12 @@ function Main({ contact, addMessage }) {
 }
 
 const mapStateToProps = (state) => ({
-  contact: state.friends.filter(
+  contact: state.allFriends.filter(
     (person) => person.id === state.activeContactId
   )[0],
+  chatList: state.friends.filter(
+    (person) => person.id === state.activeContactId
+  )[0].chatlog,
 });
 
 const mapDispatchToProps = (dispatch) => ({

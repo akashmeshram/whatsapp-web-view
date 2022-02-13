@@ -7,14 +7,16 @@ import Contact from "../../Components/Contact";
 
 import Profilebar from "../../Components/Profilebar";
 
-function Side({ personalName, personalPic, chatList, changeContact }) {
-  const [profileName, setProfileName] = useState("");
-  const [profilePic, setProfilePic] = useState("");
+function Side({
+  personalName,
+  personalPic,
+  personalStatus,
+  chatList,
+  changeContact,
+}) {
   const [contactList, setContactList] = useState([]);
 
   useEffect(() => {
-    setProfileName(personalName);
-    setProfilePic(personalPic);
     const allContacts = chatList.map((person, i) => (
       <Contact
         key={i}
@@ -24,12 +26,16 @@ function Side({ personalName, personalPic, chatList, changeContact }) {
       />
     ));
     setContactList(allContacts);
-  }, [personalName, personalPic, chatList, changeContact]);
+  }, [chatList, changeContact]);
 
   return (
     <div className={styles.container}>
       <div>
-        <Profilebar name={profileName} picture={profilePic} />
+        <Profilebar
+          name={personalName}
+          picture={personalPic}
+          status={personalStatus}
+        />
       </div>
       <div className={styles.contacts}>{contactList}</div>
     </div>
@@ -39,6 +45,7 @@ function Side({ personalName, personalPic, chatList, changeContact }) {
 const mapStateToProps = (state) => ({
   personalName: state.profile.name,
   personalPic: state.profile.picture,
+  personalStatus: state.profile.status,
   chatList: state.profile.friends,
 });
 

@@ -32,10 +32,6 @@
   z-index: 2;
 }
 
-/* .send > button:focus {
-  outline: none;
-} */
-
 .send > button:hover {
   cursor: pointer;
 }

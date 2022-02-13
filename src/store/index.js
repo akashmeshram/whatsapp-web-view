@@ -24,24 +24,48 @@ const reducer = (state = initialState, action) => {
     case CHANGE_CONTACT:
       return { ...state, activeContactId: action.id };
     case ADD_MESSAGE:
+      if (action.text === "") return state;
+      const crrentTime = formatAMPM(new Date());
+
       const message = {
         text: action.text,
-        timestamp: formatAMPM(new Date()),
+        timestamp: crrentTime,
         side: "right",
       };
+
+      const contact = {
+        ...state.profile.friends.filter(
+          (person) => person.id === state.activeContactId
+        )[0],
+        latest_timestamp: crrentTime,
+        lastChat: action.text,
+      };
+
+      const changedProfile = {
+        ...state.profile,
+        friends: [
+          contact,
+          ...state.profile.friends.filter(
+            (person) => person.id !== state.activeContactId
+          ),
+        ],
+      };
+
+      const changesMessages = state.friends.map((person) => {
+        if (person.id === state.activeContactId) {
+          const chatlog = [
+            ...person.chatlog,
+            { ...message, message_id: person.chatlog.length + 1 },
+          ];
+          return { ...person, chatlog };
+        }
+        return person;
+      });
+
       return {
         ...state,
-        friends: state.friends.map((person) => {
-          if (person.id === state.activeContactId) {
-            const chatlog = [
-              ...person.chatlog,
-              { ...message, message_id: person.chatlog.length + 1 },
-            ];
-            console.log({ chatlog });
-            return { ...person, chatlog };
-          }
-          return person;
-        }),
+        profile: changedProfile,
+        friends: changesMessages,
       };
     default:
       return state;

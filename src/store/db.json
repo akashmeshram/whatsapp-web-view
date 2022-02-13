@@ -1,7 +1,7 @@
 {
   "profile": {
     "id": 1,
-    "name": "Karthik",
+    "name": "Akash Meshram",
     "picture": "https://image.ibb.co/k0wVTm/profile_pic.jpg",
     "status": "Available",
     "friends": [
@@ -300,7 +300,7 @@
       "id": 8,
       "name": "Katie",
       "picture": "https://image.ibb.co/eLVWbw/katie_1.jpg",
-      "status": "Busy"
+      "status": "Available"
     },
     {
       "id": 7,
@@ -312,7 +312,7 @@
       "id": 6,
       "name": "Darth Vader",
       "picture": "https://image.ibb.co/j4Ov3b/darth_vader_1.png",
-      "status": "Busy"
+      "status": "Available"
     },
     {
       "id": 5,
@@ -324,7 +324,7 @@
       "id": 4,
       "name": "Luke",
       "picture": "https://image.ibb.co/jOzeUG/luke_1.jpg",
-      "status": "Busy"
+      "status": "Available"
     },
     {
       "id": 3,
@@ -336,7 +336,7 @@
       "id": 2,
       "name": "Alex",
       "picture": "https://image.ibb.co/cA2oOb/alex_1.jpg",
-      "status": "Busy"
+      "status": "Available"
     },
     {
       "id": 17,

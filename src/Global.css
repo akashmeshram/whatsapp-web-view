@@ -1,5 +1,5 @@
 .App {
-  width: 1396px;
+  max-width: 1396px;
   height: calc(100vh - 40px);
   margin: 20px auto;
   background-color: aquamarine;
@@ -8,4 +8,23 @@
 
 body {
   background-color: #eae6df;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f0f2f5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(134, 150, 160);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(134, 150, 160);
 }
