@@ -42,7 +42,7 @@ const mapStateToProps = (state) => ({
   chatList: state.profile.friends,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
   changeContact: (id) => {
     dispatch(changeActiveContact(id));
   },

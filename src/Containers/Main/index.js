@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { useState, useEffect } from "react";
+import { addMessageToContact } from "../../store/action";
 
 import styles from "./style.module.css";
 import Message from "../../Components/Message";
@@ -7,7 +8,7 @@ import Message from "../../Components/Message";
 import Profilebar from "../../Components/Profilebar";
 import Chatbox from "../../Components/Chatbox";
 
-function Main({ contact }) {
+function Main({ contact, addMessage }) {
   const [profileName, setProfileName] = useState("");
   const [profilePic, setProfilePic] = useState("");
   const [messageList, setMessageList] = useState([]);
@@ -15,11 +16,9 @@ function Main({ contact }) {
   useEffect(() => {
     setProfileName(contact.name);
     setProfilePic(contact.picture);
-    const allMessages = contact.chatlog
-      .reverse()
-      .map(({ text, side, timestamp }, i) => (
-        <Message key={i} id={i} text={text} side={side} time={timestamp} />
-      ));
+    const allMessages = contact.chatlog.map(({ text, side, timestamp }, i) => (
+      <Message key={i} id={i} text={text} side={side} time={timestamp} />
+    ));
     setMessageList(allMessages);
   }, [contact]);
 
@@ -30,7 +29,7 @@ function Main({ contact }) {
       </div>
       <div className={styles.messages}>{messageList}</div>
       <div>
-        <Chatbox />
+        <Chatbox sendMessage={addMessage} />
       </div>
     </div>
   );
@@ -42,4 +41,10 @@ const mapStateToProps = (state) => ({
   )[0],
 });
 
-export default connect(mapStateToProps)(Main);
+const mapDispatchToProps = (dispatch) => ({
+  addMessage: (text) => {
+    dispatch(addMessageToContact(text));
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

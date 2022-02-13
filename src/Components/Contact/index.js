@@ -9,7 +9,7 @@ function Contact({ person, id, makeActive }) {
       <div className={styles.profileinfo}>
         <div className={styles.profileHeader}>
           <p className={styles.profileName}>{person.name}</p>
-          <p className={styles.profileTimestamp}>12/12/2002</p>
+          <p className={styles.profileTimestamp}>{person.latest_timestamp}</p>
         </div>
         <p className={styles.latestMessage}>{person.lastChat}</p>
       </div>
