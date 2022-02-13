@@ -1,14 +1,17 @@
 import styles from "./style.module.css";
 
-function Message({ id }) {
+function Message({ side, text, time }) {
   return (
     <div
       className={[
         styles.container,
-        ...(id % 2 === 0 ? [styles.receiver] : []),
+        ...(side === "left" ? [styles.receiver] : []),
       ].join(" ")}
     >
-      <p className={styles.text}>hello there how are you {id}</p>
+      <div className={styles.text}>
+        <p>{text}</p>
+        <span className={styles.timestamp}>{time}</span>
+      </div>
     </div>
   );
 }

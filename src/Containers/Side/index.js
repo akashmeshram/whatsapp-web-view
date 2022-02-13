@@ -1,12 +1,13 @@
 import { connect } from "react-redux";
 import { useState, useEffect } from "react";
+import { changeActiveContact } from "../../store/action";
 
 import styles from "./style.module.css";
 import Contact from "../../Components/Contact";
 
 import Profilebar from "../../Components/Profilebar";
 
-function Side({ personalName, personalPic, chatList }) {
+function Side({ personalName, personalPic, chatList, changeContact }) {
   const [profileName, setProfileName] = useState("");
   const [profilePic, setProfilePic] = useState("");
   const [contactList, setContactList] = useState([]);
@@ -15,10 +16,15 @@ function Side({ personalName, personalPic, chatList }) {
     setProfileName(personalName);
     setProfilePic(personalPic);
     const allContacts = chatList.map((person, i) => (
-      <Contact key={i} id={i} person={person} />
+      <Contact
+        key={i}
+        id={person.id}
+        person={person}
+        makeActive={changeContact}
+      />
     ));
     setContactList(allContacts);
-  }, [personalName, personalPic, chatList]);
+  }, [personalName, personalPic, chatList, changeContact]);
 
   return (
     <div className={styles.container}>
@@ -36,4 +42,10 @@ const mapStateToProps = (state) => ({
   chatList: state.profile.friends,
 });
 
-export default connect(mapStateToProps)(Side);
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  changeContact: (id) => {
+    dispatch(changeActiveContact(id));
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Side);

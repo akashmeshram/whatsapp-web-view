@@ -2,10 +2,12 @@
   flex: 5 1 0;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   background-color: #ecece4;
 }
 
 .messages {
   overflow-y: scroll;
   padding: 0 10%;
+  height: 100%;
 }

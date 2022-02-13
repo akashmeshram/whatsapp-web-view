@@ -15,4 +15,14 @@
   padding: 5px 20px;
   max-width: 60%;
   font-size: 14px;
+  line-height: 19px;
+}
+
+.timestamp {
+  position: relative;
+  float: right;
+  font-size: 10px;
+  color: rgb(134, 150, 160);
+  margin-left: 4px;
+  vertical-align: baseline;
 }

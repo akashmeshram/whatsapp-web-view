@@ -1,0 +1,2 @@
+export const CHANGE_CONTACT = "CHANGE_ACTIVE_CONTACT";
+export const ADD_MESSAGE = "ADD_MESSAGE";
