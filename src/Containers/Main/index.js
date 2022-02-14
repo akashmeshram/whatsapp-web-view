@@ -15,7 +15,7 @@ function Main({ contact, chatList, addMessage }) {
     const allMessages = chatList.map(({ text, side, timestamp }, i) => (
       <Message key={i} id={i} text={text} side={side} time={timestamp} />
     ));
-    setMessageList(allMessages);
+    setMessageList(allMessages.reverse());
   }, [contact, chatList]);
 
   return (
