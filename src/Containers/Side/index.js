@@ -13,6 +13,7 @@ function Side({
   personalStatus,
   chatList,
   changeContact,
+  activeContact,
 }) {
   const [contactList, setContactList] = useState([]);
 
@@ -23,10 +24,11 @@ function Side({
         id={person.id}
         person={person}
         makeActive={changeContact}
+        active={activeContact === person.id}
       />
     ));
     setContactList(allContacts);
-  }, [chatList, changeContact]);
+  }, [chatList, activeContact, changeContact]);
 
   return (
     <div className={styles.container}>
@@ -47,6 +49,7 @@ const mapStateToProps = (state) => ({
   personalPic: state.profile.picture,
   personalStatus: state.profile.status,
   chatList: state.profile.friends,
+  activeContact: state.activeContactId,
 });
 
 const mapDispatchToProps = (dispatch) => ({

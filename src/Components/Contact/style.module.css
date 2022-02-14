@@ -6,6 +6,11 @@
   padding-right: 15px;
 }
 
+.active {
+  margin-top: -1px;
+  background-color: #e9edef;
+}
+
 .container:hover {
   cursor: pointer;
 }
@@ -29,7 +34,11 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  border-top: 1px solid #e9edef;
+  border-bottom: 1px solid #e9edef;
+}
+
+.active > .profileinfo {
+  border-bottom: none;
 }
 
 .profileHeader {

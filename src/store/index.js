@@ -4,7 +4,7 @@ import { CHANGE_CONTACT, ADD_MESSAGE } from "./types";
 
 const initialState = {
   ...data,
-  activeContactId: 2,
+  activeContactId: 3,
 };
 
 function formatAMPM(date) {

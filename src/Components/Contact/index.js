@@ -1,8 +1,14 @@
 import styles from "./style.module.css";
 
-function Contact({ person, id, makeActive }) {
+function Contact({ person, id, makeActive, active }) {
+  console.log({ active });
   return (
-    <div className={styles.container} onClick={() => makeActive(id)}>
+    <div
+      className={[styles.container, ...(active ? [styles.active] : [])].join(
+        " "
+      )}
+      onClick={() => makeActive(id)}
+    >
       <div className={styles.displaypic}>
         <img src={person.picture} alt={`contact-pic-${id}`} />
       </div>

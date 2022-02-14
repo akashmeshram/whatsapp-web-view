@@ -11,11 +11,22 @@
 
 .text {
   background-color: white;
-  border-radius: 3px;
+  border-radius: 7.5px;
   padding: 5px 20px;
   max-width: 60%;
   font-size: 14px;
   line-height: 19px;
+  border-top-right-radius: 0%;
+}
+
+.receiver > .text {
+  border-top-left-radius: 0%;
+  border-top-right-radius: 7.5px;
+}
+
+.arrow {
+  color: white;
+  margin-top: -1px;
 }
 
 .timestamp {
@@ -23,6 +34,7 @@
   float: right;
   font-size: 10px;
   color: rgb(134, 150, 160);
-  margin-left: 4px;
+  margin-right: -14px;
+  margin-bottom: -5px;
   vertical-align: baseline;
 }
